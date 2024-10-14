@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: app-qmgr01-appset
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusterDecisionResource:
+        configMapRef: acm-placement
+        labelSelector:
+          matchLabels:
+            cluster.open-cluster-management.io/placement: all-clusters-placement
+        requeueAfterSeconds: 180
+  template:
+    metadata:
+      name: app-qmgr01-app-{{name}}
+      labels:
+        velero.io/exclude-from-backup: "true"
+    spec:
+      project: app-qmgr01
+      sources:
+        - repositoryType: git
+          repoURL: https://github.com/ldesrosi/mq-test-instance.git
+          targetRevision: master
+          path: environments/dev/qmgr01
+      destination:
+        namespace: app-qmgr01
+        server: "{{server}}"
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
+        syncOptions:
+          - CreateNamespace=true
+          - PruneLast=true

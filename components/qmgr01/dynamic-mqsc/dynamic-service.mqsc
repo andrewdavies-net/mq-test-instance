@@ -1,0 +1,19 @@
+* Use this file for MQSC that you want to be able to update without restarting the queue manager.
+
+* Z CLUSTER *
+
+* ESP LOCAL QUEUES - Local Queues for Testing Traffic - to Z OCP
+****************************************************************
+DEFINE QLOCAL('ALOCAL.QUEUE.QL') CLUSTER('') DEFBIND(NOTFIXED) DEFPSIST(YES) DESCR('~QM~ local test queue') DISTL(NO) MAXDEPTH(5000) REPLACE
+
+
+* ESP ALIAS QUEUES - Alias Queues for Testing Traffic - to Z OCP
+****************************************************************
+DEFINE QALIAS('ANALIAS.QUEUE.QA') TARGET('ALOCAL.QUEUE') CLUSTER('') DEFBIND(NOTFIXED) DEFPSIST(YES) DESCR('~QM~ Alias test queue') TARGTYPE(QUEUE) REPLACE
+
+
+
+* ESP BO QUEUES - Backout Queues for Testing Traffic - to Z OCP
+****************************************************************
+DEFINE QLOCAL('ABACKOUT.QUEUE.BO') CLUSTER('') DEFBIND(NOTFIXED) DEFPSIST(YES) DESCR('~QM~ BO test queue') DISTL(NO) MAXDEPTH(5000) REPLACE
+

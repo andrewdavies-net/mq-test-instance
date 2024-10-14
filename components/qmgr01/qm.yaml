@@ -1,0 +1,69 @@
+# QMGR YAML 'ENVIRONMENT' OVERLAY - this is the overlay which works with the other layers within the tree.  Specific QMGR environment dependancies here.
+
+# QUEUE MANAGER - api version and kind of deployment, with deployment name (QMGR name).
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: ~qm~
+  annotations:
+    "com.ibm.cp4i/disable-webhook-runtime-checks" : "true"
+  labels:
+    environment: ~env~
+    service: ~service~
+    function: ~function~
+    tower: ~tower~
+spec:
+  queueManager:
+    name: ~QM~
+# QUEUE MANAGER end.
+
+# MQ AUTHORITY Remove - feature disables MQ permissions - currently running in base/native-ha
+#        - env:
+#            - name: MQSNOAUT
+#              value: 'yes'
+# MQ AUTHORITY end
+
+# STATIC MQSC files to the '/etc/mqm' location.  Note: This is essential for these files to be visible to the QMGR.
+    mqsc:
+      - configMap:
+          name: ~qm~-mqsc-configmap
+          items:
+            - static-native-ha.mqsc
+            - static-qm.mqsc
+# STATIC MQSC files end
+
+# QM.INI edit for a queue manager deployment - adds to the '/etc/mqm' location. Note: This is essential for the file to be visible to the QMGR.
+
+# Disabled intentionally - same qm.ini but with diff name
+#    ini:
+#      - configMap:
+#          name: ~qm~-mqsc-ini-config
+#          items:
+#             - qm.ini
+# QM.INI edit end
+
+# CPU and RAM Resources - configure queue manager CPU and RAM
+    logFormat: ~log-format~
+    resources:
+      requests:
+        cpu: ~cpu-min~
+        memory: ~memory-min~
+      limits:
+        cpu: ~cpu-max~
+        memory: ~memory-max~
+# CPU and RAM Resources end
+
+# STORAGE Resources - configure queue manager storage type and how much
+    storage:
+      defaultClass: ocs-storagecluster-ceph-rbd
+      queueManager:
+        class: ocs-storagecluster-ceph-rbd
+        size: ~storage-size~
+        type: persistent-claim
+# STORAGE Resources end
+
+# PLATFORM UI 'MQ Console'.  Note: This must be inserted at the end of QMGR config or it'll stop config from loading.
+  web:
+    enabled: false
+# PLATFORM UI 'MQ Console' end
+

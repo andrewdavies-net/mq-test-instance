@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+# DISABLE AUTO END SUFFIX - Removes the random alpha numeric ending to objects such as configMaps.
+generatorOptions:
+ disableNameSuffixHash: true
+# DISABLE AUTO END SUFFIX end
+
+# Create a configMap that will be used with a volume that is dynamically updated.
+configMapGenerator:
+
+- name: ~qm~-dynamic-mqsc-configmap
+  behavior: create
+  files:
+  - dynamic-service.mqsc
+  - dynamic-qmgr.mqsc
+
+#transformers:
+#- finalizer.yaml

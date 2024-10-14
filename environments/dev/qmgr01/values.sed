@@ -1,0 +1,9 @@
+s/~tower~/Tower1/g
+s/~function~/APP1QMGR/g
+s/~log-format~/JSON/g
+s/~QM~/IBMDEMO01/g
+s/~qm~/ibmdemo01/g
+s/~env~/DEV/g
+s/~service~/App1/g
+s/~LICENSE~/L-RJON-CD3JKX/g
+s/~VERSION~/9.3.0.3-r1/g

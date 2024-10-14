@@ -1,0 +1,8 @@
+
+components:
+- ../../../components/qmgr01
+
+# ENABLE SED REPLACE - this points to the SED transformer and enables it at this level in the YAML tree.
+transformers:
+- finalizer.yaml
+# ENABLE SED REPLACE end
