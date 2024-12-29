@@ -27,13 +27,8 @@ configMapGenerator:
 # CUSTOM QM.INI end
 
 - name: ~qm~-dynamic-mqsc-configmap
-  behavior: merge
+  behavior: create
   files:
   - dynamic-mqsc/dynamic-service.mqsc
   - dynamic-mqsc/dynamic-qmgr.mqsc
 # --- CONFIGMAP CREATOR --- end
-
-# ENABLE SED REPLACE - this points to the SED transformer and enables it at this level in the YAML tree.
-#transformers:
-#- finalizer.yaml
-# ENABLE SED REPLACE end

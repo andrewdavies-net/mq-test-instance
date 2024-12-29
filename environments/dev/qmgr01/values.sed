@@ -7,3 +7,8 @@ s/~env~/DEV/g
 s/~service~/App1/g
 s/~LICENSE~/L-RJON-CD3JKX/g
 s/~VERSION~/9.3.0.3-r1/g
+s/~cpu-min~/0.5/g
+s/~cpu-max~/1/g
+s/~memory-min~/256/g
+s/~memory-max~/512/g
+s/~storage-size~/1Gb/g
