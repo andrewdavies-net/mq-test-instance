@@ -1,15 +1,13 @@
 apiVersion: kustomize.config.k8s.io/v1alpha1
 kind: Component
 
+resources:
+- https://github.com/ldesrosi/gitops-components-library/components/mq/native-ha/
+
 # MERGE FILES INTO ONE - merge multiple files of the same name, across different sections of the YAML tree into one.
 patchesStrategicMerge:
 - ./qm.yaml
 # MERGE FILES INTO ONE end
-
-# COMPONENTS - add additional components like scripts etc. - Currently required for adding dynamic objects on the fly and retaining them.# COMPONENTS - required for adding dynamic objects on the fly and retaining them.
-components:
-- https://github.com/ldesrosi/gitops-components-library.git/components/mq/native-ha/
-# COMPONENTS - add additional components like scripts etc. - Currently required for adding dynamic objects on the fly and retaining them.
 
 # --- CONFIGMAP CREATOR --- create configmaps from files you've added to insert into the QMGR build/creation.
 # MQSC CONFIG - add 'static' MQSC files, whcih only take effect on inital build of the QMGR container/POD. This one merges other configs of the same name elsewhere in the YAML tree.
@@ -18,18 +16,18 @@ configMapGenerator:
 - name: ~qm~-mqsc-configmap
   behavior: merge
   files:
-  - static-qm.mqsc
+  - ./static-qm.mqsc
 # --- CONFIGMAP CREATOR --- end
 
 # CUSTOM QM.INI - add your own custom 'qm.ini' file
 - name: ~qm~-mqsc-ini-config
   behavior: merge
   files:
-   - qm.ini
+   - ./qm.ini
 # CUSTOM QM.INI end
 
 - name: ~qm~-dynamic-mqsc-configmap
-  behavior: create
+  behavior: merge
   files:
   - dynamic-mqsc/dynamic-service.mqsc
   - dynamic-mqsc/dynamic-qmgr.mqsc

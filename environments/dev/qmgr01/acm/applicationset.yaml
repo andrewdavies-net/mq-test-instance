@@ -9,11 +9,11 @@ spec:
         configMapRef: acm-placement
         labelSelector:
           matchLabels:
-            cluster.open-cluster-management.io/placement: all-clusters-placement
+            cluster.open-cluster-management.io/placement: z-clusters-placement
         requeueAfterSeconds: 180
   template:
     metadata:
-      name: app-qmgr01-app-{{name}}
+      name: app-qmgr01-{{name}}
       labels:
         velero.io/exclude-from-backup: "true"
     spec:
