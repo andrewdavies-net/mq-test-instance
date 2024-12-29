@@ -12,3 +12,5 @@ s/~cpu-max~/1/g
 s/~memory-min~/256/g
 s/~memory-max~/512/g
 s/~storage-size~/1Gb/g
+s/~organisation~/IBM/g
+s/~hostname~/apps.mg-z.ibmlab.de/g
