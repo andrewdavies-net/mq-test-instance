@@ -55,9 +55,9 @@ spec:
 
 # STORAGE Resources - configure queue manager storage type and how much
     storage:
-      defaultClass: ocs-storagecluster-ceph-rbd
+      defaultClass: ocs-external-storagecluster-ceph-rbd
       queueManager:
-        class: ocs-storagecluster-ceph-rbd
+        class: ocs-external-storagecluster-ceph-rbd
         size: ~storage-size~
         type: persistent-claim
 # STORAGE Resources end
