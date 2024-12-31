@@ -4,6 +4,9 @@ kind: Component
 resources:
 - https://github.com/ldesrosi/gitops-components-library/components/mq/native-ha/
 
+generatorOptions:
+ disableNameSuffixHash: true
+ 
 # MERGE FILES INTO ONE - merge multiple files of the same name, across different sections of the YAML tree into one.
 patchesStrategicMerge:
 - ./qm.yaml
