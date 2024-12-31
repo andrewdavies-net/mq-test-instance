@@ -18,10 +18,12 @@ spec:
         velero.io/exclude-from-backup: "true"
     spec:
       project: app-qmgr01
-      sources:
-        - repoURL: https://github.com/ldesrosi/mq-test-instance.git
-          targetRevision: master
-          path: environments/dev/qmgr01
+      source:
+        repoURL: https://github.com/ldesrosi/mq-test-instance.git
+        targetRevision: master
+        path: environments/dev/qmgr01
+        plugin:
+          name: kustomize-with-local-plugins
       destination:
         namespace: app-qmgr01
         server: "{{server}}"
