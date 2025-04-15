@@ -17,7 +17,8 @@ spec:
       labels:
         velero.io/exclude-from-backup: "true"
     spec:
-      project: app-qmgr01
+      project: default
+      # project: app-qmgr01
       source:
         repoURL: https://github.com/andrewdavies-net/mq-test-instance.git
         targetRevision: master
@@ -34,3 +35,4 @@ spec:
         syncOptions:
           - CreateNamespace=true
           - PruneLast=true
+
