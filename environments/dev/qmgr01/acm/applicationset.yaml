@@ -19,7 +19,7 @@ spec:
     spec:
       project: app-qmgr01
       source:
-        repoURL: https://github.com/ldesrosi/mq-test-instance.git
+        repoURL: https://github.com/andrewdavies-net/mq-test-instance.git
         targetRevision: master
         path: environments/dev/qmgr01
         plugin:
