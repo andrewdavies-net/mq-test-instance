@@ -13,4 +13,4 @@ spec:
             - key: name
               operator: In
               values:
-                - nwg-mg-z
+                - ocpz1
