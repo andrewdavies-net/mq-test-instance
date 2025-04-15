@@ -6,7 +6,7 @@ s/~qm~/ibmdemo01/g
 s/~env~/DEV/g
 s/~service~/App1/g
 s/~LICENSE~/L-RJON-CD3JKX/g
-s/~VERSION~/9.3.0.3-r1/g
+s/~VERSION~/9.4.0.6-r1/g
 s/~cpu-min~/200m/g
 s/~cpu-max~/700m/g
 s/~memory-min~/256Mi/g
