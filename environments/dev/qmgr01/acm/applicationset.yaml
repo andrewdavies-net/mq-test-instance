@@ -9,15 +9,21 @@ spec:
         configMapRef: acm-placement
         labelSelector:
           matchLabels:
-            cluster.open-cluster-management.io/placement: all-clusters-placement
+            cluster.open-cluster-management.io/placement: active-cluster-placement
         requeueAfterSeconds: 180
   template:
     metadata:
       name: app-qmgr01-{{name}}
+      annotations:
+        apps.open-cluster-management.io/ocm-managed-cluster: "{{name}}"
+        apps.open-cluster-management.io/ocm-managed-cluster-app-namespace: openshift-gitops
+        argocd.argoproj.io/skip-reconcile: "true"
       labels:
+        apps.open-cluster-management.io/pull-to-ocm-managed-cluster: "true"
         velero.io/exclude-from-backup: "true"
     spec:
-      project: app-qmgr01
+      project: default
+      # project: app-qmgr01
       source:
         repoURL: https://github.com/andrewdavies-net/mq-test-instance.git
         targetRevision: master
@@ -35,3 +41,10 @@ spec:
           - CreateNamespace=true
           - PruneLast=true
 
+      annotations:
+        apps.open-cluster-management.io/ocm-managed-cluster: "{{name}}"
+        apps.open-cluster-management.io/ocm-managed-cluster-app-namespace: openshift-gitops
+        argocd.argoproj.io/skip-reconcile: "true"
+      labels:
+        apps.open-cluster-management.io/pull-to-ocm-managed-cluster: "true"
+        velero.io/exclude-from-backup: "true"
