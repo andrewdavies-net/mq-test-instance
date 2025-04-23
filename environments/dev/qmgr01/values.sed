@@ -13,4 +13,4 @@ s/~memory-min~/256Mi/g
 s/~memory-max~/512Mi/g
 s/~storage-size~/8Gi/g
 s/~organisation~/IBM/g
-s/~hostname~/apps.mg-z.ibmlab.de/g
+s/~hostname~/apps.ocpz1.ibmlab.de/g
