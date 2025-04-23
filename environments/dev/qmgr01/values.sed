@@ -5,8 +5,8 @@ s/~QM~/IBMDEMO01/g
 s/~qm~/ibmdemo01/g
 s/~env~/DEV/g
 s/~service~/App1/g
-s/~LICENSE~/L-EHXT-MQCRN9/g
-s/~VERSION~/9.4.0.6-r1/g
+s/~LICENSE~/L-QWBN-T3PKLE/g
+s/~VERSION~/9.4.2.0-r2/g
 s/~cpu-min~/200m/g
 s/~cpu-max~/700m/g
 s/~memory-min~/256Mi/g
