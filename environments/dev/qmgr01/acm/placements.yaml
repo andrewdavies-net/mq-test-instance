@@ -16,6 +16,6 @@ spec:
               operator: In
               values:
                 - ocpz1
-                # - ocpz2
+                - ocpz2
                 # - nwg-mm
                 # - nwg-mg
