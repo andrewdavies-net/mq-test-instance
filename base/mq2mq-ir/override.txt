@@ -1,0 +1,6 @@
+IBMMQtoMQ#inputConnection=CCDT
+IBMMQtoMQ#inputQueueMgrName=~SOURCE_QMGR~
+IBMMQtoMQ#inputQueueName=~INPUT_QUEUE~
+IBMMQtoMQ#outputConnection=CCDT
+IBMMQtoMQ#outputQueueMgrName=~TARGET_QMGR~
+IBMMQtoMQ#outputQueueName=~OUTPUT_QUEUE~

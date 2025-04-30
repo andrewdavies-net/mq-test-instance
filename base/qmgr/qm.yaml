@@ -1,0 +1,18 @@
+# QMGR YAML 'ENVIRONMENT' OVERLAY - this is the overlay which works with the other layers within the tree.  Specific QMGR environment dependancies here.
+
+# QUEUE MANAGER - api version and kind of deployment, with deployment name (QMGR name).
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: ~qm~
+  annotations:
+    "com.ibm.cp4i/disable-webhook-runtime-checks" : "true"
+  labels:
+    environment: ~env~
+    service: ~service~
+    function: ~function~
+    tower: ~tower~
+spec:
+  queueManager:
+    name: ~QM~
+# QUEUE MANAGER end.

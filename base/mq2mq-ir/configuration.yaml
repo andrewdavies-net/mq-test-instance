@@ -1,0 +1,17 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: Configuration
+metadata:
+  name: config-override-~flow~
+spec:
+  secretName: config-override-~flow~-secret
+  type: workdiroverride
+  version: 13.0.2.0-r1
+---
+apiVersion: appconnect.ibm.com/v1beta1
+kind: Configuration
+metadata:
+  name: config-ccdt-~flow~
+spec:
+  secretName: config-mqccdt-~flow~-secret
+  type: mqccdt
+  version: 13.0.2.0-r1

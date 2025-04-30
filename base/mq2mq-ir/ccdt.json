@@ -1,0 +1,84 @@
+{
+    "channel": [
+      {
+        "general":
+        {
+          "description": "~SOURCE_DOMAIN1_NAME~"
+        },  
+        "name": "~SOURCE_QMGR~.1.SVRCONN",
+        "clientConnection": {
+          "connection": [
+            {
+              "host": "~source_qmgr_hostname1~.~source_domain1~",
+              "port": ~source_qmgr_port1~
+            }
+          ],
+          "queueManager": "~SOURCE_QMGR~"
+        },
+        "transmissionSecurity": {
+          "cipherSpecification" : "TLS_RSA_WITH_AES_256_GCM_SHA384"
+        },
+        "type": "clientConnection"
+      },
+      {
+        "general":
+        {
+          "description": "~SOURCE_DOMAIN2_NAME~"
+        },  
+        "name": "~SOURCE_QMGR~.1.SVRCONN",
+        "clientConnection": {
+          "connection": [
+            {
+              "host": "~source_qmgr_hostname1~.~source_domain2~",
+              "port": ~source_qmgr_port2~
+            }
+          ],
+          "queueManager": "~SOURCE_QMGR~"
+        },
+        "transmissionSecurity": {
+          "cipherSpecification" : "TLS_RSA_WITH_AES_256_GCM_SHA384"
+        },
+        "type": "clientConnection"
+      },
+      {
+        "general":
+        {
+          "description": "~TARGET_DOMAIN1_NAME~"
+        },  
+        "name": "~TARGET_QMGR~.1.SVRCONN",
+        "clientConnection": {
+          "connection": [
+            {
+              "host": "~target_qmgr_hostname1~.~target_domain1~",
+              "port": ~target_qmgr_port1~
+            }
+          ],
+          "queueManager": "~TARGET_QMGR~"
+        },
+        "transmissionSecurity": {
+          "cipherSpecification" : "TLS_RSA_WITH_AES_256_GCM_SHA384"
+        },
+        "type": "clientConnection"
+      },
+      {
+        "general":
+        {
+          "description": "~TARGET_DOMAIN2_NAME~"
+        },  
+        "name": "~TARGET_QMGR~.1.SVRCONN",
+        "clientConnection": {
+          "connection": [
+            {
+              "host": "~target_qmgr_hostname2~.~target_domain2~",
+              "port": ~target_qmgr_port2~
+            }
+          ],
+          "queueManager": "~TARGET_QMGR~"
+        },
+        "transmissionSecurity": {
+          "cipherSpecification" : "TLS_RSA_WITH_AES_256_GCM_SHA384"
+        },
+        "type": "clientConnection"
+      }
+    ]
+}

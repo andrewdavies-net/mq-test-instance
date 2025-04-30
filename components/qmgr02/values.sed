@@ -1,0 +1,14 @@
+s/~tower~/Tower1/g
+s/~function~/APP2QMGR/g
+s/~log-format~/JSON/g
+s/~QM~/IBMDEMO02/g
+s/~qm~/ibmdemo02/g
+s/~service~/App2/g
+s/~LICENSE~/L-QWBN-T3PKLE/g
+s/~VERSION~/9.4.2.0-r2/g
+s/~cpu-min~/200m/g
+s/~cpu-max~/700m/g
+s/~memory-min~/256Mi/g
+s/~memory-max~/512Mi/g
+s/~storage-size~/8Gi/g
+s/~organisation~/IBM/g

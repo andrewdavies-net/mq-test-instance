@@ -1,0 +1,10 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: IntegrationRuntime
+metadata:
+  name: mq2mq_~flow~
+spec:
+  barURL: 
+    - https://github.com/ldesrosi/ace-mq-to-mq-flow/releases/download/v0.1/mq2mq_flow.bar
+  configuration:
+    - config-override-~flow~
+    - config-mqccdt-~flow~
