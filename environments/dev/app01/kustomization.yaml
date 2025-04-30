@@ -3,11 +3,12 @@ components:
 - ../../../components/qmgr01
 - ../../../components/ir01
 
-secretGenerator:
-- name: config-mqccdt-~flow~-secret
-  behavior: create
-  files:
-  - ../../../base/mq2mq-ir/ccdt.json
+# Removed as it needs to sit above the files it interacts with within kustomize
+# secretGenerator:
+# - name: config-mqccdt-~flow~-secret
+#   behavior: create
+#   files:
+#   - ../../../base/mq2mq-ir/ccdt.json
 
 # ENABLE SED REPLACE - this points to the SED transformer and enables it at this level in the YAML tree.
 transformers:
