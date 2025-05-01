@@ -22,13 +22,6 @@ configMapGenerator:
   - ./static-qm.mqsc
 # --- CONFIGMAP CREATOR --- end
 
-# CUSTOM QM.INI - add your own custom 'qm.ini' file
-- name: ~qm~-mqsc-ini-config
-  behavior: merge
-  files:
-   - ./qm.ini
-# CUSTOM QM.INI end
-
 - name: ~qm~-dynamic-mqsc-configmap
   behavior: create
   files:
