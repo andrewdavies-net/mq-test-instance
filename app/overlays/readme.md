@@ -1,1 +1,2 @@
 Overlays folder will overlay environment configuration for app
+Inside each environment is the subdivide of Cluster to allow for cluster specific config (We might need another layer for cluster specific then general overwrites)
