@@ -1,4 +1,3 @@
----
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
@@ -28,7 +27,7 @@ spec:
       source:
         repoURL: https://github.com/andrewdavies-net/mq-test-instance.git
         targetRevision: master
-        path: environments/dev/app01
+        path: app01/overlays/development/
         plugin:
           name: kustomize-with-local-plugins
       destination:
