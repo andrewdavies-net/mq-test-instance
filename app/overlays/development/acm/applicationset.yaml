@@ -32,7 +32,8 @@ spec:
       source:
         repoURL: https://github.com/andrewdavies-net/mq-test-instance.git
         targetRevision: master
-        path: "app/overlays/development/{{name}}"
+        # path: app/overlays/development/{{name}}
+        path: app/overlays/development/ocpz1
         plugin:
           name: kustomize-with-local-plugins
           # potentially possile to pass down gotemplate as kustomize params
