@@ -1,0 +1,52 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: app-qmgr
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusterDecisionResource:
+        configMapRef: acm-placement
+        labelSelector:
+          matchLabels:
+            cluster.open-cluster-management.io/placement: secondary-cluster-placement
+        requeueAfterSeconds: 180
+    # - list:
+    #     elements: might be able to use list elements to either do environments or multiple clusters with alternative connig
+    #       - environment: dev
+    #       - environment: staging
+    #       - environment: prod
+  template:
+    metadata:
+      name: app-qmgr02-{{name}}
+      annotations:
+        apps.open-cluster-management.io/ocm-managed-cluster: "{{name}}"
+        apps.open-cluster-management.io/ocm-managed-cluster-app-namespace: openshift-gitops
+        argocd.argoproj.io/skip-reconcile: "true"
+      labels:
+        apps.open-cluster-management.io/pull-to-ocm-managed-cluster: "true"
+        velero.io/exclude-from-backup: "true"
+    spec:
+      project: default
+      # project: app-qmgr02
+      source:
+        repoURL: https://github.com/andrewdavies-net/mq-test-instance.git
+        targetRevision: master
+        # path: app/overlays/development/{{name}}
+        path: app/overlays/development/app-qmgr2/{{name}}
+        plugin:
+          name: kustomize-with-local-plugins
+          # potentially possile to pass down gotemplate as kustomize params
+      destination:
+        namespace: app-qmgr02
+        server: "{{server}}"
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
+        syncOptions:
+          - CreateNamespace=true
+          - PruneLast=true
+
+          
+          

@@ -9,7 +9,7 @@ spec:
         configMapRef: acm-placement
         labelSelector:
           matchLabels:
-            cluster.open-cluster-management.io/placement: active-cluster-placement
+            cluster.open-cluster-management.io/placement: primary-cluster-placement
         requeueAfterSeconds: 180
     # - list:
     #     elements: might be able to use list elements to either do environments or multiple clusters with alternative connig
@@ -33,7 +33,7 @@ spec:
         repoURL: https://github.com/andrewdavies-net/mq-test-instance.git
         targetRevision: master
         # path: app/overlays/development/{{name}}
-        path: app/overlays/development/*/{{name}}
+        path: app/overlays/development/appqmgr1/{{name}}
         plugin:
           name: kustomize-with-local-plugins
           # potentially possile to pass down gotemplate as kustomize params
