@@ -1,7 +1,7 @@
 
 components:
 - ../../../components/qmgr01
-- ../../../components/ir01
+# - ../../../components/ir01
 
 # Removed as it needs to sit above the files it interacts with within kustomize
 # secretGenerator:
@@ -11,6 +11,6 @@ components:
 #   - ../../../base/mq2mq-ir/ccdt.json
 
 # ENABLE SED REPLACE - this points to the SED transformer and enables it at this level in the YAML tree.
-transformers:
-- finalizer.yaml
+# transformers:
+# - finalizer.yaml
 # ENABLE SED REPLACE end
