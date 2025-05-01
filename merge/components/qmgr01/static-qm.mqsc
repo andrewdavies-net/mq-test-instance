@@ -1,6 +1,0 @@
-* Use this file to apply MQSC to all environments/instances of this queue manager.
-DEFINE QLOCAL(DEMO.Q.~QM~) REPLACE
-DEFINE QLOCAL(DEMO.Q.~QM~.STATIC) REPLACE
-*
-
-
