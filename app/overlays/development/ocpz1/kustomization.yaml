@@ -1,6 +1,6 @@
 
 components:
-- ../../base/qmgr
+- ../../../base/qmgr
 
 # ENABLE SED REPLACE - this points to the SED transformer and enables it at this level in the YAML tree.
 transformers:
