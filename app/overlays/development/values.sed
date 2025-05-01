@@ -1,10 +1,10 @@
 s/~tower~/Tower1/g
 s/~function~/APP1QMGR/g
 s/~log-format~/JSON/g
-s/~QM~/IBMDEMO01/g
-s/~qm~/ibmdemo01/g
+s/~QM~/APPQMGR/g
+s/~qm~/appqmgr/g
 s/~env~/DEV/g
-s/~service~/App1/g
+s/~service~/App/g
 s/~LICENSE~/L-QWBN-T3PKLE/g
 s/~VERSION~/9.4.2.0-r2/g
 s/~cpu-min~/200m/g
