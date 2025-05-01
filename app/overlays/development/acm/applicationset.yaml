@@ -11,6 +11,11 @@ spec:
           matchLabels:
             cluster.open-cluster-management.io/placement: active-cluster-placement
         requeueAfterSeconds: 180
+    # - list:
+    #     elements: might be able to use list elements to either do environments or multiple clusters with alternative connig
+    #       - environment: dev
+    #       - environment: staging
+    #       - environment: prod
   template:
     metadata:
       name: app-qmgr01-{{name}}
@@ -30,6 +35,7 @@ spec:
         path: app/overlays/development/
         plugin:
           name: kustomize-with-local-plugins
+          # potentially possile to pass down gotemplate as kustomize params
       destination:
         namespace: app-qmgr01
         server: "{{server}}"
@@ -40,3 +46,6 @@ spec:
         syncOptions:
           - CreateNamespace=true
           - PruneLast=true
+
+          
+          
