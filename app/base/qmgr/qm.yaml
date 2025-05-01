@@ -63,8 +63,4 @@ spec:
         type: persistent-claim
 # STORAGE Resources end
 
-# PLATFORM UI 'MQ Console'.  Note: This must be inserted at the end of QMGR config or it'll stop config from loading.
-  web:
-    enabled: true
-# PLATFORM UI 'MQ Console' end
 
