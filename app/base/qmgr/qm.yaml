@@ -57,10 +57,9 @@ spec:
 # STORAGE Resources - configure queue manager storage type and how much
     storage:
       defaultClass: ocs-external-storagecluster-ceph-rbd
+      defaultDeleteClaim: true
       queueManager:
         class: ocs-external-storagecluster-ceph-rbd
         size: ~storage-size~
         type: persistent-claim
 # STORAGE Resources end
-
-
