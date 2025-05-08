@@ -25,12 +25,12 @@ spec:
 # MQ AUTHORITY end
 
 # STATIC MQSC files to the '/etc/mqm' location.  Note: This is essential for these files to be visible to the QMGR.
-   mqsc:
-     - configMap:
-         name: ~qm~-mqsc-configmap
-         items:
-           - static-native-ha.mqsc
-           - static-qm.mqsc
+    mqsc:
+      - configMap:
+          name: ~qm~-mqsc-configmap
+          items:
+            - static-native-ha.mqsc
+            - static-qm.mqsc
 # STATIC MQSC files end
 
 # QM.INI edit for a queue manager deployment - adds to the '/etc/mqm' location. Note: This is essential for the file to be visible to the QMGR.
