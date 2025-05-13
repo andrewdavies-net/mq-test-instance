@@ -16,7 +16,6 @@ metadata:
 spec:
   queueManager:
     name: ~QM~
-# QUEUE MANAGER end.
 
 # MQ AUTHORITY Remove - feature disables MQ permissions - currently running in base/native-ha
 #        - env:
