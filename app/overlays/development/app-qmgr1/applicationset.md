@@ -7,3 +7,6 @@ Need to highlight where each component is
 QMGR
 QUEUE
 CHANNEL
+
+Queues & Channels are likely under APP
+QMGR is likely above this
