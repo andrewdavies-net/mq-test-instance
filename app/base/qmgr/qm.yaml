@@ -14,6 +14,13 @@ metadata:
     function: ~function~
     tower: ~tower~
 spec:
+  template:
+  pod:
+    containers:
+      env:
+        LOG_LEVEL: debug
+        SPAN_FORMAT: otel
+        OTLP_EXPORTER_GRPC_ENDPOINT: "otel-collector-monitoring.observability.svc.cluster.local:4317"
   queueManager:
     name: ~QM~
 
